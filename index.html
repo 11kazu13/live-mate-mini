@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>LiveMate mini - ライブ同行掲示板</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ライブ同行掲示板</h1>
+    <p>「ひとりで現場行くのがちょっと怖い…」を解決する掲示板です。</p>
+  </header>
+
+  <main>
+    <!-- 投稿フォーム -->
+    <section class="post-form">
+      <h2>同行者を募集する</h2>
+      <form id="postForm">
+        <div class="form-row">
+          <label for="title">ライブ名</label>
+          <input type="text" id="title" required />
+        </div>
+
+        <div class="form-row">
+          <label for="date">日付</label>
+          <input type="date" id="date" required />
+        </div>
+
+        <div class="form-row">
+          <label for="area">会場名</label>
+          <input type="text" id="area" placeholder="例）新宿WALLY、吉祥寺CLUB SEATA、Veats Shibuya" required />
+        </div>
+
+        <div class="form-row">
+          <label for="comment">ひとこと</label>
+          <textarea id="comment" rows="2" placeholder="初現場なので優しくしてください…など"></textarea>
+        </div>
+
+        <button type="submit">投稿する</button>
+      </form>
+    </section>
+
+    <!-- 募集一覧 -->
+    <section class="post-list">
+      <h2>募集一覧</h2>
+      <div id="postList">
+        <p id="emptyMessage">まだ投稿はありません。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 LiveMate mini</small>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

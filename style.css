@@ -71,7 +71,31 @@ button:hover {
   color: #9ca3af;
 }
 
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+
 .post-title {
   font-weight: 600;
-  margin-bottom: 4px;
+  margin: 0;
+  flex: 1;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
 }

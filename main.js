@@ -1,5 +1,5 @@
 // ページの読み込みが完了してから実行
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { // Documet(HTML) Object Modelの略 HTMLをオブジェクトのように扱う。
   const form = document.getElementById("postForm");
   const postList = document.getElementById("postList");
   const emptyMessage = document.getElementById("emptyMessage");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 初期化：LocalStorageからデータを読み込む
   function loadPosts() {
-    const savedData = localStorage.getItem("live_mate_posts");
+    const savedData = localStorage.getItem("live_mate_posts"); // key値："live_mate_posts"
     if (savedData) {
       posts = JSON.parse(savedData);
 
@@ -17,9 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (emptyMessage) {
           emptyMessage.remove();
         }
-        // 配列は新しい順（[0]が最新）なので、順番にappendChildしていけばOK
-        // ただし、もし逆順で保存していた場合は工夫が必要ですが、
-        // 今回はunshiftで追加しているので[0]が最新です。
+        // 配列は新しい順（[0]が最新）なので、順番にappendChildしていけばok
+        // 今回はunshiftで追加しているので[0]が最新
         posts.forEach((post) => {
           const item = createPostElement(post);
           postList.appendChild(item);
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 投稿データをLocalStorageに保存する
   function savePosts() {
-    localStorage.setItem("live_mate_posts", JSON.stringify(posts));
+    localStorage.setItem("live_mate_posts", JSON.stringify(posts)); // JSON文字列で保存
   }
 
   // 投稿のHTML要素を作成する関数
@@ -111,15 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 「まだ投稿はありません。」を消す
     if (emptyMessage) {
       emptyMessage.remove(); // DOMから削除
-    } else {
-      // 既に削除されている場合は取得し直さないとエラーにはならないが、念の為
-      // getElementByIdで再取得するか、変数がnullになっていないか。
-      // DOM要素がremove()されると変数は残るが、DOMツリーからは消える。
-      // 再度呼び出してもエラーにはならない。
     }
-    // 注意: emptyMessage変数はDOMContentLoadedの時点で取得したもの。
-    // 一度 remove() すると、画面上からは消える。
-    // 再度投稿した時に remove() を呼んでも問題はない。
 
     // 募集カードを作って表示
     const item = createPostElement(newPost);

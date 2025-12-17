@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => { // Documet(HTML) Object Mo
           console.error("読み込み失敗", err);
           alert("サーバーから読み込めなかった（json-server起動してる？）");
       }
-  } 
+  }
 
   // // 【LocalStrage版】投稿データをLocalStorageに保存する
   // function savePosts() {
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => { // Documet(HTML) Object Mo
           console.error("削除失敗", err);
           alert("削除できなかった（json-server起動してる？）");
       }
-  }    
+  }
 
   // 起動時に読み込みを実行
   loadPosts();

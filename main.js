@@ -175,14 +175,14 @@ document.addEventListener("DOMContentLoaded", () => { // Documet(HTML) Object Mo
           date: liveDate,
           area: liveArea,
           comment: liveNote,
-      };    
+      };
 
       try {
           const res = await fetch("http://localhost:3001/posts", { // サーバーに接触
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(newPost),
-          });    
+          });
 
           const saved = await res.json(); //サーバーから返却
 
@@ -199,5 +199,5 @@ document.addEventListener("DOMContentLoaded", () => { // Documet(HTML) Object Mo
           console.error("投稿失敗", err);
           alert("投稿できなかった（json-server起動してる？）");
       }
-   });    
+   });
 });
